@@ -9,11 +9,9 @@
 //    <div class="tab">topic here</div>
 
 let topicsDiv = document.querySelector('.topics');
-console.log(topicsDiv);
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(response => {
-        console.log(response)
         response.data.topics.forEach(element => {
             let newTab = TabCreator(element);
             topicsDiv.appendChild(newTab);
